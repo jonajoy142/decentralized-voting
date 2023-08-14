@@ -1,0 +1,227 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "hashKey",
+						"type": "bytes32"
+					}
+				],
+				"name": "ProductAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_productId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_productName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_quantity",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_quality",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_farmerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_farmerName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_pickupLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_deliveryAddress",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_offTakerName",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_bagNumbers",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_bagQuantities",
+						"type": "string[]"
+					}
+				],
+				"name": "addProduct",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hashKey",
+						"type": "bytes32"
+					}
+				],
+				"name": "getProductDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "productId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "productName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "quantity",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "quality",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "farmerId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "farmerName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "pickupLocation",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "deliveryAddress",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "offTakerName",
+								"type": "string"
+							},
+							{
+								"internalType": "string[]",
+								"name": "bagNumbers",
+								"type": "string[]"
+							},
+							{
+								"internalType": "string[]",
+								"name": "bagQuantities",
+								"type": "string[]"
+							}
+						],
+						"internalType": "struct TraceabilityContract.ProductDetails",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hashKey",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "string",
+						"name": "newQuantity",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newQuality",
+						"type": "string"
+					}
+				],
+				"name": "updateProductDetails",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/traceability.sol": "TraceabilityContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/traceability.sol": {
+			"keccak256": "0xc0c5a318c8151104743dc7093d36bb1081726af08851f78b8c103986a975879f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://218858d5a172704dc45e4139f4eb003f06462f4d5f9984675ecf297dfc09b6ac",
+				"dweb:/ipfs/QmT1XJrNktBPN6SxMTftULMb5hHSSvgQpW2uoE5NhsU4K4"
+			]
+		}
+	},
+	"version": 1
+}
