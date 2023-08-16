@@ -22,7 +22,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_productId",
+						"name": "_contractID",
 						"type": "uint256"
 					},
 					{
@@ -101,7 +101,7 @@
 						"components": [
 							{
 								"internalType": "uint256",
-								"name": "productId",
+								"name": "contractID",
 								"type": "uint256"
 							},
 							{
@@ -167,22 +167,33 @@
 				"inputs": [
 					{
 						"internalType": "bytes32",
-						"name": "hashKey",
+						"name": "_oldHashKey",
 						"type": "bytes32"
 					},
 					{
 						"internalType": "string",
-						"name": "newQuantity",
+						"name": "_contractID",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "newQuality",
+						"name": "_newQuality",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_newQuantity",
 						"type": "string"
 					}
 				],
 				"name": "updateProductDetails",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -215,11 +226,11 @@
 	},
 	"sources": {
 		"contracts/traceability.sol": {
-			"keccak256": "0xc0c5a318c8151104743dc7093d36bb1081726af08851f78b8c103986a975879f",
+			"keccak256": "0xa67feb267cccd1c5c2b53b295f083b4160315e6f53390c9787cbe4b6916751b2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://218858d5a172704dc45e4139f4eb003f06462f4d5f9984675ecf297dfc09b6ac",
-				"dweb:/ipfs/QmT1XJrNktBPN6SxMTftULMb5hHSSvgQpW2uoE5NhsU4K4"
+				"bzz-raw://5040767131c16eeff739cdd34656a1793cc900c1e8a9efac206798240d5cc745",
+				"dweb:/ipfs/QmZYg9hwMvsEQJyihf5A6Li8bQmukEDDjxX4iq2TFQah2b"
 			]
 		}
 	},

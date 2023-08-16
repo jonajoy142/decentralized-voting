@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract TraceabilityContract {
     struct ProductDetails {
-        uint256 productId;
+        uint256 contractID;
         string productName;
         string quantity;
         string quality;
@@ -19,9 +19,10 @@ contract TraceabilityContract {
     mapping(bytes32 => ProductDetails) private products;
 
     event ProductAdded(bytes32 indexed hashKey);
-
+ 
+ //to add product details to blockchain
     function addProduct(
-        uint256 _productId,
+        uint256 _contractID,
         string memory _productName,
         string memory _quantity,
         string memory _quality,
@@ -33,11 +34,11 @@ contract TraceabilityContract {
         string[] memory _bagNumbers,
         string[] memory _bagQuantities
     ) public returns (bytes32) {
-        bytes32 hashKey = keccak256(abi.encodePacked(_productId, _productName, _quantity, _quality, _farmerId, _farmerName, _pickupLocation, _deliveryAddress, _offTakerName));
-        require(products[hashKey].productId == 0, "Product already exists");
+        bytes32 hashKey = keccak256(abi.encodePacked(_contractID, _productName, _quantity, _quality, _farmerId, _farmerName, _pickupLocation, _deliveryAddress, _offTakerName));
+        require(products[hashKey].contractID == 0, "Product already exists");
 
         products[hashKey] = ProductDetails(
-            _productId,
+            _contractID,
             _productName,
             _quantity,
             _quality,
@@ -53,16 +54,65 @@ contract TraceabilityContract {
         emit ProductAdded(hashKey);
         return hashKey;
     }
+ 
+ //update product details and Qr
+  function updateProductDetails(    
+    bytes32 _oldHashKey,
+    uint256 _contractID,
+    string memory _newQuality,
+    string memory _newQuantity
+) public returns (bytes32) {
+    ProductDetails storage product = products[_oldHashKey];
+    require(product.contractID != 0, "Product does not exist");
 
-    function updateProductDetails(
-        bytes32 hashKey,
-        string memory newQuantity,
-        string memory newQuality
-    ) public {
-        require(products[hashKey].productId != 0, "Product does not exist");
-        products[hashKey].quantity = newQuantity;
-        products[hashKey].quality = newQuality;
+    
+    bytes32 newHashKey;
+    if (bytes(_newQuality).length > 0 && bytes(_newQuantity).length > 0) {
+        newHashKey = keccak256(abi.encodePacked(
+            _contractID,
+            _oldHashKey,
+            _newQuantity,
+            _newQuality
+        ));
+    } else if (bytes(_newQuality).length > 0) {
+        newHashKey = keccak256(abi.encodePacked(
+            _contractID,
+            _oldHashKey,
+            _newQuality
+        ));
+    } else if (bytes(_newQuantity).length > 0) {
+        newHashKey = keccak256(abi.encodePacked(
+            _contractID,
+            _oldHashKey,
+            _newQuantity
+        ));
+    } else {
+        revert("Either quality or quantity should be updated");
     }
+
+    require(
+        products[newHashKey].contractID == 0,
+        "Product with new quality and quantity already exists"
+    );
+
+    ProductDetails storage newProduct = products[newHashKey];
+    newProduct.contractID = product.contractID;
+    newProduct.productName = product.productName;
+    newProduct.quantity = bytes(_newQuantity).length > 0 ? _newQuantity : product.quantity;
+    newProduct.quality = bytes(_newQuality).length > 0 ? _newQuality : product.quality;
+    newProduct.farmerId = product.farmerId;
+    newProduct.farmerName = product.farmerName;
+    newProduct.offTakerName = product.offTakerName;
+    newProduct.pickupLocation = product.pickupLocation;
+    newProduct.deliveryAddress = product.deliveryAddress;
+    newProduct.bagNumbers = product.bagNumbers;
+    newProduct.bagQuantities = product.bagQuantities;
+
+    emit ProductAdded(newHashKey);
+    return newHashKey;
+}
+
+   //retrieve block details
 
     function getProductDetails(bytes32 hashKey) public view returns (ProductDetails memory) {
         return products[hashKey];
