@@ -118,3 +118,13 @@ contract TraceabilityContract {
         return products[hashKey];
     }
 }
+
+//0x962Dd956c399618601F7171A87f9ACfd42E0F7b0
+
+//0xdac406aa1730c747d568207d9a8a798bd4150d94c5f8b85ac5038daf4a54e5b3
+
+
+//new
+
+//0x1498b4170F0B304D3f7C857B130483738413462a
+//0x0c4297125f7ad68b93b13c8060681c9188ba530d72dd35ffb767f4e2ddae2937
