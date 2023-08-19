@@ -171,9 +171,9 @@
 						"type": "bytes32"
 					},
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "_contractID",
-						"type": "string"
+						"type": "uint256"
 					},
 					{
 						"internalType": "string",
@@ -226,11 +226,11 @@
 	},
 	"sources": {
 		"contracts/traceability.sol": {
-			"keccak256": "0xa67feb267cccd1c5c2b53b295f083b4160315e6f53390c9787cbe4b6916751b2",
+			"keccak256": "0x0486d3e7f8902c533da070804095ebb6729317a94fb2e3df8f89b4e561393d5b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5040767131c16eeff739cdd34656a1793cc900c1e8a9efac206798240d5cc745",
-				"dweb:/ipfs/QmZYg9hwMvsEQJyihf5A6Li8bQmukEDDjxX4iq2TFQah2b"
+				"bzz-raw://fd0db71dcd825c097c3d350aba5b63fbfc7b6be983e77873e0f08454ea9bace5",
+				"dweb:/ipfs/QmWo3CbQuQscZR8NQGjJXmcp575f18RUDmeFLanqGsDQyq"
 			]
 		}
 	},
