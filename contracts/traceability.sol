@@ -7,7 +7,7 @@ contract TraceabilityContract {
         string productName;
         string quantity;
         string quality;
-        uint256 farmerId;
+        string farmerId;
         string farmerName;
         string pickupLocation;
         string deliveryAddress;
@@ -26,7 +26,7 @@ contract TraceabilityContract {
         string memory _productName,
         string memory _quantity,
         string memory _quality,
-        uint256 _farmerId,
+        string memory _farmerId,
         string memory _farmerName,
         string memory _pickupLocation,
         string memory _deliveryAddress,

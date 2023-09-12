@@ -41,9 +41,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "_farmerId",
-						"type": "uint256"
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -120,9 +120,9 @@
 								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "farmerId",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "string",
@@ -226,11 +226,11 @@
 	},
 	"sources": {
 		"contracts/traceability.sol": {
-			"keccak256": "0x6aa7f324e208b099ba1c6c22ce872e8cc46a12fefcc2994786c424eee7324172",
+			"keccak256": "0x777b78a678cbd3043d1cc9de48d2b8a286d73b2144c9f8d5ac89485f36e74b31",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://47467846fb57294f79584e5e9e3772fe2bc9b8b064571718c20b0dbffdfdf85a",
-				"dweb:/ipfs/QmRk7JgDVZTXGSKWDpEdun8WAZKLRxFbyfGFoFSCbAU8WZ"
+				"bzz-raw://8be6572f5bbdad621515d88b162bdbde0e0720a20bf037b50563682c43e57aa2",
+				"dweb:/ipfs/QmSBgNczqmMt43rvQeCtqDVHNVcJuuFTQkAmAkvBwfXchw"
 			]
 		}
 	},
