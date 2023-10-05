@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
+    "autoprefixer": "^10.4.16",
+    "bufferutil": "^4.0.7",
+    "next": "^13.5.4",
     "react": "latest",
     "react-dom": "latest",
+    "tailwindcss": "^3.3.3",
+    "utf-8-validate": "^5.0.10",
     "web3modal": "^1.9.12"
   },
   "devDependencies": {
