@@ -8,7 +8,7 @@ import { VotingContext } from '../constants/voter';
 // import Style from './page.module.css'
 // import images from "../../../public/assets"
 // import Button from '@/components/Button/Button'
-import Input from '@/components/Input/Input'
+import Input from '@/components/Input/input'
 const allowedVoters =() =>{
   const [fileUrl, setFileUrl] = useState(null)
   const [formInput, setFormInput] = useState({
