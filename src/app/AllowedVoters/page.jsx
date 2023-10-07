@@ -9,7 +9,7 @@ import { VotingContext } from '../constants/voter';
 // import images from "../../../public/assets"
 // import Button from '@/components/Button/Button'
 import Input from '@/components/Input/input'
-const allowedVoters =() =>{
+const AllowedVoters =() =>{
   const [fileUrl, setFileUrl] = useState(null)
   const [formInput, setFormInput] = useState({
     name: '',
@@ -42,7 +42,7 @@ return (
                         Name: {formInput.name}
                     </p>
                     <p className='text-amber-300'>
-                        Address:{formInput.address.slice(0,10)}
+                        Address:{formInput.address.slice(0,20)}
                     </p>
                     <p className='text-amber-300'>
                         Pos:{formInput.position}
@@ -109,4 +109,4 @@ return (
 );
 };
 
-export default allowedVoters
+export default AllowedVoters
