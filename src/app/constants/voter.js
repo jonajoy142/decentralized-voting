@@ -50,17 +50,17 @@ const fetchContract = async (signerOrProvider) =>
             } catch (error) {
                 console.log(error);
             }
-            try {
-                const provider = new ethers.providers.Web3Provider(window.ethereum);
-                const signer = provider.getSigner();
-                const contract = await fetchContract(signer);
-                const accounts = await window.ethereum.request({method:'eth_requestAccounts'});
-                const account = accounts[0];
-                setCurrentAccount(account);
-                // console.log(account);
-            } catch (error) {
-                console.log(error);
-            }
+            // try {
+            //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+            //     const signer = provider.getSigner();
+            //     const contract = await fetchContract(signer);
+            //     const accounts = await window.ethereum.request({method:'eth_requestAccounts'});
+            //     const account = accounts[0];
+            //     setCurrentAccount(account);
+            //     // console.log(account);
+            // } catch (error) {
+            //     console.log(error);
+            // }
         };
         //-----------upload to ipfs voter img
         const uplaodToUPFS  = async (e) => {
@@ -72,9 +72,9 @@ const fetchContract = async (signerOrProvider) =>
                 setError("Error uploading image");
             }  
         };
-        
+
         return (
-            <VotingContext.Provider value={{votingTitle,connectWallet,checkWalletConnected}}>
+            <VotingContext.Provider value={{votingTitle, connectWallet, checkWalletConnected}}>
                 {children}
             </VotingContext.Provider>
         );
