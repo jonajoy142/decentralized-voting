@@ -40,9 +40,41 @@ const fetchContract = async (signerOrProvider) =>
                 setError("Please connect to MetaMask");
             }
         };
-
+        //-----------connect wallet
+        const connectWallet = async () => {
+            try {
+               if(!window.ethereum) return setError("MetaMask not found");
+               const account = await window.ethereum.request({method:'eth_requestAccounts'});
+                // console.log(account);
+                setCurrentAccount(account[0]);
+            } catch (error) {
+                console.log(error);
+            }
+            try {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const signer = provider.getSigner();
+                const contract = await fetchContract(signer);
+                const accounts = await window.ethereum.request({method:'eth_requestAccounts'});
+                const account = accounts[0];
+                setCurrentAccount(account);
+                // console.log(account);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        //-----------upload to ipfs voter img
+        const uplaodToUPFS  = async (e) => {
+            try{
+             const addd = await client.add({content:file});
+             const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+             return url;    
+            } catch{
+                setError("Error uploading image");
+            }  
+        };
+        
         return (
-            <VotingContext.Provider value={{votingTitle}}>
+            <VotingContext.Provider value={{votingTitle,connectWallet,checkWalletConnected}}>
                 {children}
             </VotingContext.Provider>
         );
