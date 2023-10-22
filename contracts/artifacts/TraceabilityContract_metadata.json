@@ -233,11 +233,11 @@
 	},
 	"sources": {
 		"contracts/traceability.sol": {
-			"keccak256": "0xd49b842a001f6e6f359c34eefdf848f4e959cac955c4ffc8734a6ef93022937b",
+			"keccak256": "0x01710c811f2adeed9ab45f22e18acdb9303b3e2d911ddd311c276a66c6e8237f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2ba1bfae107bd885b8532e8e0b61859eeca52d78d2d4a0a9374419bb1bed2a66",
-				"dweb:/ipfs/QmcJziHp5TSJXLxkXqmKF3P4QqEbLmYeaYrUuN27o9zs3t"
+				"bzz-raw://21d3742a372d907ad2c3dbc1e9cdc2fe499b20369719c0b463a2079b8a6774d9",
+				"dweb:/ipfs/QmYN1piDNxCDr5PM1F9N4cCPij4G7PptnThMARhdxLMVY7"
 			]
 		}
 	},
